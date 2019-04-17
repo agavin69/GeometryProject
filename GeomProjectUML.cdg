@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GeometryProject">
+  <ClassDiagramComponents>
+    <Class name="Circle" package="geometryproject" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="radius"/>
+          <Argument type="double" name="random"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cone" package="geometryproject" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+        <Field name="height" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="radius"/>
+          <Argument type="double" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getHeight" returnType="double" visibility="public"/>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="computeVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cube" package="geometryproject" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="length" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="length"/>
+          <Argument type="double" name="random"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="getLength" returnType="double" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="computeVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cylinder" package="geometryproject" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+        <Field name="height" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="radius"/>
+          <Argument type="double" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getHeight" returnType="double" visibility="public"/>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="computeVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Geom" package="geometryproject" visibility="public" isAbstract="true" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="Shape" type="String" visibility="protected"/>
+        <Field name="center" type="double[]" visibility="protected"/>
+        <Field name="length" type="double" visibility="public"/>
+        <Field name="radius" type="double" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="computeArea" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="computeVolume" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="getDimensions" returnType="double[]" visibility="public" isAbstract="true"/>
+        <Method name="read" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="setLocation" returnType="void" visibility="public">
+          <Argument type="double[]" name="position"/>
+        </Method>
+        <Method name="getLocation" returnType="double[]" visibility="public"/>
+        <Method name="getLength" returnType="double" visibility="public"/>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getShape" returnType="String" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="printDescription" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="isLargerThan" returnType="int" visibility="public">
+          <Argument type="Relatable" name="other"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Geom2D" package="geometryproject" visibility="public" isAbstract="true" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="thickness" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="computeVolume" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Geom3D" package="geometryproject" visibility="public" isAbstract="true" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Rectangle" package="geometryproject" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="length" type="double" visibility="private"/>
+        <Field name="height" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="width"/>
+          <Argument type="double" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Relatable" package="geometryproject" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Methods>
+        <Method name="isLargerThan" returnType="int" visibility="public">
+          <Argument type="Relatable" name="other"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Sphere" package="geometryproject" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="radius"/>
+          <Argument type="double" name="random"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="computeVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Square" package="geometryproject" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="length" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="shapeName"/>
+          <Argument type="double" name="length"/>
+          <Argument type="double" name="random"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDimensions" returnType="double[]" visibility="public"/>
+        <Method name="computeArea" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="read" returnType="void" visibility="public">
+          <Argument type="BufferedReader" name="br"/>
+        </Method>
+        <Method name="getParameters" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VolumeSorting" package="geometryproject" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="compare" returnType="int" visibility="public">
+          <Argument type="Geom" name="o1"/>
+          <Argument type="Geom" name="o2"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PlotCanvas" package="graphics2D" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="yValues" type="double[][]" visibility="private"/>
+        <Field name="xValues" type="double[]" visibility="private"/>
+        <Field name="name" type="String" visibility="private" isFinal="true"/>
+        <Field name="xLabel" type="String" visibility="private" isFinal="true"/>
+        <Field name="yLabel" type="String" visibility="private" isFinal="true"/>
+        <Field name="minY" type="double" visibility="private"/>
+        <Field name="writeData" type="boolean" visibility="public"/>
+        <Field name="dots" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="dotsize" type="int" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="xVal"/>
+          <Argument type="double[][]" name="yVal"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="xlbl"/>
+          <Argument type="String" name="ylbl"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setDataPoints" returnType="void" visibility="public" isFinal="true">
+          <Argument type="double[]" name="xVals"/>
+          <Argument type="double[][]" name="yVals"/>
+        </Method>
+        <Method name="paint" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="plotCurves" returnType="void" visibility="public"/>
+        <Method name="drawCoordinateAxes" returnType="void" visibility="private"/>
+        <Method name="format" returnType="String" visibility="private">
+          <Argument type="double" name="value"/>
+        </Method>
+        <Method name="checkResetMaxMin" returnType="void" visibility="protected"/>
+        <Method name="convertCoordToPixel" returnType="Point" visibility="private">
+          <Argument type="Point3d" name="pt3d"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="plot" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="title"/>
+          <Argument type="ArrayList" name="xlist"/>
+          <Argument type="ArrayList" name="ylist"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CustomCam" package="graphics3D" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="cam" type="Camera" visibility="private" isFinal="true"/>
+        <Field name="upVec" type="Vector3f" visibility="private"/>
+        <Field name="lookAt" type="Vector3f" visibility="private"/>
+        <Field name="centroid" type="Vector3f" visibility="private"/>
+        <Field name="rotationSpeed" type="float" visibility="private"/>
+        <Field name="moveSpeed" type="float" visibility="private"/>
+        <Field name="zoomSpeed" type="float" visibility="private"/>
+        <Field name="inputManager" type="InputManager" visibility="private"/>
+        <Field name="distance" type="float" visibility="private"/>
+        <Field name="pos" type="Vector3f" visibility="private"/>
+        <Field name="midMouse" type="boolean" visibility="private"/>
+        <Field name="leftMouse" type="boolean" visibility="private"/>
+        <Field name="rightMouse" type="boolean" visibility="private"/>
+        <Field name="ctrl" type="boolean" visibility="private"/>
+        <Field name="shift" type="boolean" visibility="private"/>
+        <Field name="alt" type="boolean" visibility="private"/>
+        <Field name="ctrlAltShift" type="ActionListener" visibility="private" isFinal="true"/>
+        <Field name="vel" type="Vector3f" visibility="private" isFinal="true"/>
+        <Field name="quat" type="Quaternion" visibility="private" isFinal="true"/>
+        <Field name="L" type="float" visibility="private"/>
+        <Field name="CamD" type="Vector3f[]" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Camera" name="cam"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLookAt" returnType="void" visibility="public">
+          <Argument type="Vector3f" name="lookAt"/>
+        </Method>
+        <Method name="setDistance" returnType="void" visibility="public">
+          <Argument type="float" name="dist"/>
+        </Method>
+        <Method name="setMoveSpeed" returnType="void" visibility="public">
+          <Argument type="float" name="moveSpeed"/>
+        </Method>
+        <Method name="getMoveSpeed" returnType="float" visibility="public"/>
+        <Method name="setRotationSpeed" returnType="void" visibility="public">
+          <Argument type="float" name="rotationSpeed"/>
+        </Method>
+        <Method name="getRotationSpeed" returnType="float" visibility="public"/>
+        <Method name="setZoomSpeed" returnType="void" visibility="public">
+          <Argument type="float" name="zoomSpeed"/>
+        </Method>
+        <Method name="getZoomSpeed" returnType="float" visibility="public"/>
+        <Method name="registerWithInput" returnType="void" visibility="public">
+          <Argument type="InputManager" name="inputManager"/>
+        </Method>
+        <Method name="onAnalog" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="float" name="value"/>
+          <Argument type="float" name="tpf"/>
+        </Method>
+        <Method name="onAction" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="boolean" name="keyPressed"/>
+          <Argument type="float" name="tpf"/>
+        </Method>
+        <Method name="zoomCamera" returnType="void" visibility="protected">
+          <Argument type="float" name="value"/>
+        </Method>
+        <Method name="riseCamera" returnType="void" visibility="protected">
+          <Argument type="float" name="value"/>
+        </Method>
+        <Method name="moveCamera" returnType="void" visibility="protected">
+          <Argument type="float" name="value"/>
+        </Method>
+        <Method name="rotateRt" returnType="void" visibility="private">
+          <Argument type="float" name="rot"/>
+        </Method>
+        <Method name="rotateUp" returnType="void" visibility="private">
+          <Argument type="float" name="rot"/>
+        </Method>
+        <Method name="setXYView" returnType="void" visibility="public">
+          <Argument type="boolean" name="posDir"/>
+        </Method>
+        <Method name="setXZView" returnType="void" visibility="public">
+          <Argument type="boolean" name="posDir"/>
+        </Method>
+        <Method name="setYZView" returnType="void" visibility="public">
+          <Argument type="boolean" name="posDir"/>
+        </Method>
+        <Method name="setXYZView" returnType="void" visibility="public">
+          <Argument type="int" name="dir"/>
+        </Method>
+        <Method name="resetZoom" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="JMGraphics" package="GUI" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="cnvs" type="Canvas" visibility="public" isFinal="true"/>
+        <Field name="customCam" type="CustomCam" visibility="private"/>
+        <Field name="ambient" type="AmbientLight" visibility="private" isFinal="true"/>
+        <Field name="light1" type="DirectionalLight" visibility="private" isFinal="true"/>
+        <Field name="shape" type="Geom" visibility="private"/>
+        <Field name="camQ" type="Quaternion" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Geom" name="shape"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="simpleInitApp" returnType="void" visibility="public"/>
+        <Method name="simpleUpdate" returnType="void" visibility="public">
+          <Argument type="float" name="tpf"/>
+        </Method>
+        <Method name="addBox" returnType="void" visibility="private"/>
+        <Method name="addSphere" returnType="void" visibility="private"/>
+        <Method name="addCylinder" returnType="void" visibility="private"/>
+        <Method name="addCone" returnType="void" visibility="private"/>
+        <Method name="createSceneGraph" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="MyCanvas" package="GUI" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="plotObject" type="ArrayList" visibility="package"/>
+        <Field name="k" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ArrayList" name="geomsList"/>
+          <Argument type="int" name="i"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="paint" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewJFrame" package="GUI" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="geomsList" type="ArrayList" visibility="protected"/>
+        <Field name="file" type="File" visibility="protected"/>
+        <Field name="textInput1" type="String" visibility="package"/>
+        <Field name="textInput2" type="String" visibility="package"/>
+        <Field name="n" type="int" visibility="package"/>
+        <Field name="buildButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="errorText" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="fileCircle" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileCone" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileCube" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileCylinder" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileExit" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileHeight" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fileLength" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fileName" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fileNew" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileOpen" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileRadius" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fileRectangle" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileSave" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileSaveAs" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileSphere" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileSquare" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="fileThickness" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fileWidth" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="heightField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jMenu1" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu2" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu3" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenu4" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuItem1" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem2" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="lengthField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="radiusField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="shapeField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="textarea" type="javax.swing.JTextArea" visibility="private"/>
+        <Field name="thicknessField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="typeShape" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="widthField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="xField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="yField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="zField" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="fileExitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileOpenActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileSaveActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileSaveAsActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileRectangleActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileCircleActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileNewActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenu3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="buildButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileSphereActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileSquareActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileCylinderActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileCubeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fileConeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="yFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="xFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="clearTextField" returnType="void" visibility="public"/>
+        <Method name="updateList" returnType="void" visibility="private"/>
+        <Method name="updateTable" returnType="void" visibility="private"/>
+        <Method name="checkName" returnType="boolean" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="clickedShapeHello" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="plot2D" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="plot3D" returnType="void" visibility="public">
+          <Argument type="Geom" name="shape"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="geometryproject.VolumeSorting" target="geometryproject.Geom" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="geometryproject.Geom" target="geometryproject.Relatable"/>
+    <UseRelation source="geometryproject.Geom" target="geometryproject.Relatable" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="shape" source="GUI.JMGraphics" target="geometryproject.Geom" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="geometryproject.Relatable" target="geometryproject.Relatable" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="geometryproject.Cylinder" target="geometryproject.Geom3D"/>
+    <HasRelation name="customCam" source="GUI.JMGraphics" target="graphics3D.CustomCam" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="geometryproject.Sphere" target="geometryproject.Geom3D"/>
+    <IsRelation name="is" source="geometryproject.Rectangle" target="geometryproject.Geom2D"/>
+    <IsRelation name="is" source="geometryproject.Geom3D" target="geometryproject.Geom"/>
+    <IsRelation name="is" source="geometryproject.Cone" target="geometryproject.Geom3D"/>
+    <UseRelation source="GUI.NewJFrame" target="geometryproject.Geom" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="geometryproject.Geom2D" target="geometryproject.Geom"/>
+    <IsRelation name="is" source="geometryproject.Cube" target="geometryproject.Geom3D"/>
+    <IsRelation name="is" source="geometryproject.Square" target="geometryproject.Geom2D"/>
+    <IsRelation name="is" source="geometryproject.Circle" target="geometryproject.Geom2D"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
